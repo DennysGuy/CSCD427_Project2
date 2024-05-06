@@ -32,7 +32,7 @@ public class BTNodeLeaf extends BTNode
            this.keyCounts.add(this.keys.indexOf(word), 1);
 
            //check if the node has reached threshold size
-           if (this.keys.size() == BTNode.SIZE+1) {
+           if (this.keys.size() > BTNode.SIZE) {
                //we want to execute this code when the root is a leaf node (aka this node)
                if (this.parent == null) {
                     //create a new Root that is an internal node and add the split node to the root
@@ -41,11 +41,9 @@ public class BTNodeLeaf extends BTNode
                 } else {
                    //if it's not a root node then we want to copy the split node up to the parent (if it's not full)
                    this.setupLeafsWithExistingParent(tree);
-
                }
            }
        }
-
    }
 
    private void newRootSetup(BPlusTree tree) {
@@ -65,7 +63,6 @@ public class BTNodeLeaf extends BTNode
 
        leftNode.nextLeaf = rightNode;
        rightNode.prevLeaf = leftNode;
-
 
        newRoot.children.add(leftNode);
        newRoot.children.add(rightNode);

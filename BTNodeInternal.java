@@ -27,11 +27,10 @@ public class BTNodeInternal extends BTNode
    private Boolean insertLeaf(String key, BTNode root, BPlusTree tree) {
       if (root instanceof  BTNodeInternal) {
          int index = findInsertIndex(key, root);
-         //need to check if it's full
          return this.insertLeaf(key, ((BTNodeInternal) root).children.get(index), tree);
       } else{
          root.insert(key, tree);
-         //fix parent, recursive return to parent to check if parent needs to be pixed
+         //fix parent, recursive return to parent to check if parent needs to be fixed
          this.fixBPlusTree(root.parent, tree);
          return true;
       }
@@ -48,6 +47,7 @@ public class BTNodeInternal extends BTNode
             return true;
 
          } else {
+            //if current root is not the root of the tree, do an internal node fix
             BTNodeInternal internalNode = (BTNodeInternal) root;
             internalNode.fixInternal();
             return fixBPlusTree(root.parent, tree);
@@ -78,8 +78,6 @@ public class BTNodeInternal extends BTNode
       int index = this.parent.keys.indexOf(keyToTrack);
       this.parent.children.add(index, newNode1);
       this.parent.children.add(index+1, newNode2);
-      //this.parent.children.add(leftNode);
-      //this.parent.children.add(rightNode);
       this.parent.children.remove(this);
 
    }
@@ -121,17 +119,6 @@ public class BTNodeInternal extends BTNode
          return true;
       }
    }
-
-   public void printLeavesInSequence()
-   {
-      
-   }
-   
-   public void printStructureWKeys()
-   {
-      
-   }
-
    public int findInsertIndex(String word) {
       for (int i = 0; i <= this.keys.size(); i++) {
 
@@ -150,7 +137,7 @@ public class BTNodeInternal extends BTNode
 
    private void addKeys(int start, int end, BTNodeInternal node) {
       for (int i = start; i <= end ; i++) {
-        node.keys.add(this.keys.get(i));
+         node.keys.add(this.keys.get(i));
       }
    }
 
@@ -176,6 +163,18 @@ public class BTNodeInternal extends BTNode
 
       return -1;
    }
+
+
+   public void printLeavesInSequence()
+   {
+      
+   }
+   
+   public void printStructureWKeys()
+   {
+      
+   }
+
 
    public Boolean rangeSearch(String startWord, String endWord)
    {
