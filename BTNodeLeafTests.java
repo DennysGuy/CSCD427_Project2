@@ -132,7 +132,7 @@ public class BTNodeLeafTests {
                 rootInternal = (BTNodeInternal) BPlusTree.root;
                 BTNodeLeaf secondChild = (BTNodeLeaf) rootInternal.children.get(1);
                 assertEquals(List.of("c","d"), secondChild.keys);
-                assertEquals(List.of(1,1), secondChild.keyCounts );
+                assertEquals(List.of(2,1), secondChild.keyCounts);
 
             }
 
