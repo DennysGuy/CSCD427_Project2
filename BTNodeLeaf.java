@@ -148,13 +148,14 @@ public class BTNodeLeaf extends BTNode
 
    public void printStructureWKeys()
    {
-/*       BTNodeLeaf leafNode = (BTNodeLeaf) node;
+       int level = 0;
+       BTNodeLeaf leafNode = this;
        printSpaces(level);
        System.out.println("Leaf Node: ");
        for (int i = 0; i < leafNode.keys.size(); i++) {
            printSpaces(level + 2);
            System.out.println("Key: " + leafNode.keys.get(i) + ", Count: " + leafNode.keyCounts.get(i));
-       }*/
+       }
    }
 
     private void printSpaces(int count) {
@@ -175,7 +176,7 @@ public class BTNodeLeaf extends BTNode
       BTNodeLeaf cur = this;
       while (cur != null) {
           for (int i = 0; i < cur.keys.size(); i++) {
-              if (cur.keys.get(i).equals(endWord)) {
+              if (cur.keys.get(i).equals(endWord) || cur.keys.get(i).compareTo(endWord) > 0) {
                   keys.append(cur.keys.get(i) + "\n");
                   System.out.println(keys );
                   return true;

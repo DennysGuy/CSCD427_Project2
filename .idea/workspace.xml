@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e06843-b393-4b8f-9ce4-584d3e710ff4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BTNodeInternal.java" beforeDir="false" afterPath="$PROJECT_DIR$/BTNodeInternal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BTNodeLeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/BTNodeLeaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeInternal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeInternal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeLeaf.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
