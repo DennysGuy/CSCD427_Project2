@@ -174,14 +174,16 @@ public class BTNodeLeaf extends BTNode
    {
       StringBuilder keys = new StringBuilder();
       BTNodeLeaf cur = this;
+      //need to go to the leaf that contains the startword or greater
+      keys.append("\nWords between: " + startWord + " and " + endWord +":\n");
       while (cur != null) {
           for (int i = 0; i < cur.keys.size(); i++) {
               if (cur.keys.get(i).equals(endWord) || cur.keys.get(i).compareTo(endWord) > 0) {
-                  keys.append(cur.keys.get(i) + "\n");
-                  System.out.println(keys );
+                  System.out.println(keys);
                   return true;
               }
-              keys.append(cur.keys.get(i) + "\n");
+              if ( cur.keys.get(i).compareTo(startWord) > 0)
+                keys.append(cur.keys.get(i) + "\n");
           }
           cur = cur.nextLeaf;
       }
