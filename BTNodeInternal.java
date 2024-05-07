@@ -50,20 +50,20 @@ public class BTNodeInternal extends BTNode
       if (root.keys.size() > BTNode.SIZE) {
          if (root.equals(tree.root)) {
             //create a new root node
-            this.fixRoot();
+            this.fixRoot(tree);
             return true;
 
          } else {
             //if current root is not the root of the tree, do an internal node fix
             BTNodeInternal internalNode = (BTNodeInternal) root;
-            internalNode.fixInternal();
+            internalNode.fixInternal(tree);
             return fixBPlusTree(root.parent, tree);
          }
       }
       return true;
    }
 
-   public void fixInternal() {
+   public void fixInternal(BPlusTree tree) {
       int splitKey = this.keys.size()/2;
       //add split key to new root and remove it from the current root
       this.parent.keys.add(this.keys.get(splitKey));
@@ -77,8 +77,15 @@ public class BTNodeInternal extends BTNode
       this.addKeys(splitKey+1, this.keys.size()-1, newNode2);
 
       //need to add root's leaf nodes
-      this.addLeafs(newNode1);
-      this.addLeafs(newNode2);
+      BTNodeInternal root = (BTNodeInternal) tree.root;
+      if (this.children.get(0) instanceof  BTNodeLeaf) {
+         this.addLeafs(newNode1);
+         this.addLeafs(newNode2);
+      } else {
+         this.addInternalNodes(newNode1);
+         this.addInternalNodes(newNode2);
+      }
+
 
       newNode1.parent = this.parent;
       newNode2.parent = this.parent;
@@ -90,7 +97,7 @@ public class BTNodeInternal extends BTNode
 
    }
 
-   public void fixRoot() {
+   public void fixRoot(BPlusTree tree) {
       BTNodeInternal newRoot = new BTNodeInternal();
       //find the key to split on
       int splitKey = this.keys.size()/2;
@@ -103,8 +110,15 @@ public class BTNodeInternal extends BTNode
       this.addKeys(0, splitKey, leftNode);
       this.addKeys(splitKey+1, this.keys.size()-1, rightNode);
       //need to add root's leaf nodes
-      this.addLeafs(leftNode);
-      this.addLeafs(rightNode);
+      BTNodeInternal root = (BTNodeInternal) tree.root;
+      if (root.children.get(0) instanceof  BTNodeLeaf) {
+         this.addLeafs(leftNode);
+         this.addLeafs(rightNode);
+      } else {
+         this.addInternalNodes(leftNode);
+         this.addInternalNodes(rightNode);
+      }
+
 
       leftNode.parent = newRoot;
       rightNode.parent = newRoot;
@@ -134,6 +148,14 @@ public class BTNodeInternal extends BTNode
    private void addKeys(int start, int end, BTNodeInternal node) {
       for (int i = start; i <= end ; i++) {
          node.keys.add(this.keys.get(i));
+      }
+   }
+
+   private void addInternalNodes(BTNodeInternal node) {
+      for (int i = 0; i <= node.keys.size(); i++) {
+         BTNodeInternal child = (BTNodeInternal) this.children.removeFirst();
+         child.parent = node;
+         node.children.add(child);
       }
    }
 

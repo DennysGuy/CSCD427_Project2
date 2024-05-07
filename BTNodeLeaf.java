@@ -63,6 +63,14 @@ public class BTNodeLeaf extends BTNode
        leftNode.nextLeaf = rightNode;
        rightNode.prevLeaf = leftNode;
 
+       if (this.prevLeaf != null) {
+           this.prevLeaf.nextLeaf = leftNode;
+       }
+
+       if (this.nextLeaf != null) {
+           rightNode.nextLeaf = this.nextLeaf;
+       }
+
        newRoot.children.add(leftNode);
        newRoot.children.add(rightNode);
 
@@ -83,12 +91,23 @@ public class BTNodeLeaf extends BTNode
        newNode1.parent = this.parent;
        newNode2.parent = this.parent;
 
+       newNode1.nextLeaf = newNode2;
+       newNode2.prevLeaf = newNode1;
+
+       if (this.prevLeaf != null) {
+           this.prevLeaf.nextLeaf = newNode1;
+       }
+
+       if (this.nextLeaf != null) {
+           newNode2.nextLeaf = this.nextLeaf;
+       }
+
        int index = this.parent.keys.indexOf(this.keys.get(keyToMove));
        this.parent.children.add(index, newNode1);
        this.parent.children.add(index+1, newNode2);
        this.parent.children.remove(this);
 
-       this.rebuildLeafPointers(this.parent.children);
+       //this.rebuildLeafPointers(this.parent.children);
 
    }
 
