@@ -65,8 +65,7 @@ public class BTNodeLeaf extends BTNode
 
        newRoot.children.add(leftNode);
        newRoot.children.add(rightNode);
-       tree.assignNodeID();
-       tree.assignNodeID();
+
        tree.root = newRoot;
    }
 
@@ -84,7 +83,6 @@ public class BTNodeLeaf extends BTNode
        newNode1.parent = this.parent;
        newNode2.parent = this.parent;
 
-
        int index = this.parent.keys.indexOf(this.keys.get(keyToMove));
        this.parent.children.add(index, newNode1);
        this.parent.children.add(index+1, newNode2);
@@ -92,8 +90,6 @@ public class BTNodeLeaf extends BTNode
 
        this.rebuildLeafPointers(this.parent.children);
 
-       //tree.assignNodeID();
-       //tree.assignNodeID();
    }
 
    public void rebuildLeafPointers(ArrayList<BTNode> leafList) {
@@ -103,9 +99,7 @@ public class BTNodeLeaf extends BTNode
                BTNodeLeaf next = (BTNodeLeaf) leafList.get(i+1);
                cur.nextLeaf = next;
                next.prevLeaf = cur;
-
            }
-
        }
    }
 

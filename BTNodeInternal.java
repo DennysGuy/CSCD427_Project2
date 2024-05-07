@@ -17,9 +17,14 @@ public class BTNodeInternal extends BTNode
       /*int index = this.findInsertIndex(key);
       BTNodeLeaf child = (BTNodeLeaf) this.children.get(index);
       child.insert(key, tree);*/
+      if (wordExists(key, this)) {
+         BTNodeLeaf leafToInc = this.getLeaf(key, this);
+         leafToInc.keyCounts.set(leafToInc.keys.indexOf(key), leafToInc.keyCounts.get(leafToInc.keys.indexOf(key)) + 1);
+      } else {
+         this.insertLeaf(key, tree.root, tree);
+      }
 
 
-      this.insertLeaf(key, tree.root, tree);
 
       //next we have to fix the tree
       //this.fixBPlusTree(tree);
@@ -176,6 +181,19 @@ public class BTNodeInternal extends BTNode
 
    }
 
+   private BTNodeLeaf getLeaf (String word, BTNode root) {
+      BTNodeLeaf firstLeaf = (BTNodeLeaf) this.traverseToFirstLeaf(root);
+      BTNodeLeaf cur = firstLeaf;
+      while (cur != null) {
+         for (int i = 0; i < cur.keys.size(); i++) {
+            if (cur.keys.get(i).equals(word)) {
+               return cur;
+            }
+         }
+         cur = cur.nextLeaf;
+      }
+      return null;
+   }
 
    public Boolean rangeSearch(String startWord, String endWord)
    {
@@ -205,7 +223,9 @@ public class BTNodeInternal extends BTNode
             System.out.println("Key: " + internalNode.keys.get(i));
          }
          printNode(internalNode.children.get(internalNode.children.size() - 1), level + 2);
+
       } else if (node instanceof BTNodeLeaf) {
+
          BTNodeLeaf leafNode = (BTNodeLeaf) node;
          printSpaces(level);
          System.out.println("Leaf Node: ");
@@ -216,17 +236,33 @@ public class BTNodeInternal extends BTNode
       }
    }
 
-
    private void printSpaces(int count) {
       for (int i = 0; i < count; i++) {
          System.out.print("  "); // Adjust spacing as needed
       }
    }
 
+   public Boolean wordExists(String word, BTNode root) {
+      BTNodeLeaf firstLeaf = (BTNodeLeaf) this.traverseToFirstLeaf(this);
+      BTNodeLeaf cur = firstLeaf;
+      while (cur != null) {
+         for (int i = 0; i < cur.keys.size(); i++) {
+            if (cur.keys.get(i).equals(word)){
+               return true;
+            }
+         }
+         cur = cur.nextLeaf;
+      }
+      return false;
+   }
+
    public Boolean searchWord(String word)
    {
-      BTNodeLeaf firstLeaf = (BTNodeLeaf) this.traverseToFirstLeaf(this);;
-      firstLeaf.searchWord(word);
-      return true;
+      BTNodeLeaf firstLeaf = (BTNodeLeaf) this.traverseToFirstLeaf(this);
+      if (firstLeaf.searchWord(word)) {
+         return true;
+      }
+
+      return false;
    }
 }

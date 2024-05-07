@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61e06843-b393-4b8f-9ce4-584d3e710ff4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/CSCD427_Project21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/CSCD427_Project2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/CSCD427_Project2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BTNodeInternal.java" beforeDir="false" afterPath="$PROJECT_DIR$/BTNodeInternal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BTNodeLeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/BTNodeLeaf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCD427_Project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSCD427_Project2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordFrequency.java" beforeDir="false" afterPath="$PROJECT_DIR$/WordFrequency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/.idea/libraries/CSCD427_Project2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/.idea/libraries/CSCD427_Project2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeInternal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeInternal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/CSCD427_Project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/CSCD427_Project2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/WordFrequency.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/WordFrequency.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +29,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.WordFrequency.executor": "Run",
+    "Application.WordFrequency.executor": "Debug",
+    "JUnit.BTNodeInternalTests$BPLusTreeConstruction.executor": "Run",
     "JUnit.BTNodeInternalTests.executor": "Run",
+    "JUnit.BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode.executor": "Debug",
     "JUnit.BTNodeLeafTests.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -62,10 +55,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BTNodeInternalTests$BPLusTreeConstruction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCD427_Project2" />
+      <option name="PACKAGE_NAME" value="BTNodeInternalTests" />
+      <option name="MAIN_CLASS_NAME" value="BTNodeInternalTests$BPLusTreeConstruction" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BTNodeInternalTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSCD427_Project2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BTNodeInternalTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCD427_Project2" />
+      <option name="PACKAGE_NAME" value="BTNodeLeafTests.SecondLeafNodeTests" />
+      <option name="MAIN_CLASS_NAME" value="BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,9 +93,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BTNodeLeafTests" />
-        <item itemvalue="Application.WordFrequency" />
         <item itemvalue="JUnit.BTNodeInternalTests" />
+        <item itemvalue="JUnit.BTNodeLeafTests" />
+        <item itemvalue="JUnit.BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" />
+        <item itemvalue="Application.WordFrequency" />
+        <item itemvalue="JUnit.BTNodeInternalTests$BPLusTreeConstruction" />
       </list>
     </recent_temporary>
   </component>
@@ -96,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715039562478</updated>
-      <workItem from="1715039563531" duration="17530000" />
+      <workItem from="1715039563531" duration="22494000" />
     </task>
     <servers />
   </component>
@@ -107,9 +120,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BTNodeLeafTests.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/BTNodeInternal.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="10" />
+          <line>59</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BTNodeInternal.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
