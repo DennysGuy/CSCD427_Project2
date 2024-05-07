@@ -19,9 +19,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2g7D8FsjPpvhuu4jAYS5HfwWtSG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,7 +31,7 @@
   "keyToString": {
     "Application.WordFrequency.executor": "Run",
     "JUnit.BTNodeInternalTests$BPLusTreeConstruction.executor": "Run",
-    "JUnit.BTNodeInternalTests.executor": "Debug",
+    "JUnit.BTNodeInternalTests.executor": "Run",
     "JUnit.BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode.executor": "Debug",
     "JUnit.BTNodeLeafTests.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -47,7 +47,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BTNodeInternalTests">
+  <component name="RunManager" selected="Application.WordFrequency">
     <configuration name="WordFrequency" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WordFrequency" />
       <module name="CSCD427_Project2" />
@@ -93,9 +93,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WordFrequency" />
         <item itemvalue="JUnit.BTNodeInternalTests" />
         <item itemvalue="JUnit.BTNodeLeafTests" />
-        <item itemvalue="Application.WordFrequency" />
         <item itemvalue="JUnit.BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" />
         <item itemvalue="JUnit.BTNodeInternalTests$BPLusTreeConstruction" />
       </list>
@@ -125,26 +125,22 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/WordFrequency.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="22" />
+          <url>file://$PROJECT_DIR$/BTNodeInternal.java</url>
+          <line>194</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/BTNodeInternalTests.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/BTNodeLeaf.java</url>
-          <line>131</line>
-          <properties class="BTNodeLeaf" method="printLeavesInSequence">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/WordFrequency.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="BTNodeInternal" memberName="children" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this.children.get(1)" />

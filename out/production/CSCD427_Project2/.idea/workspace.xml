@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="61e06843-b393-4b8f-9ce4-584d3e710ff4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/CSCD427_Project2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/CSCD427_Project2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCD427_Project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSCD427_Project2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTNodeInternal.java" beforeDir="false" afterPath="$PROJECT_DIR$/BTNodeInternal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BTNodeLeaf.java" beforeDir="false" afterPath="$PROJECT_DIR$/BTNodeLeaf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeInternal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeInternal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSCD427_Project2/BTNodeLeaf.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,30 +19,69 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2g7D8FsjPpvhuu4jAYS5HfwWtSG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.BTNodeLeafTests.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.WordFrequency.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BTNodeInternalTests$BPLusTreeConstruction.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BTNodeInternalTests.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BTNodeLeafTests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="JUnit.BTNodeLeafTests">
+    <configuration name="WordFrequency" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WordFrequency" />
+      <module name="CSCD427_Project2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BTNodeInternalTests$BPLusTreeConstruction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCD427_Project2" />
+      <option name="PACKAGE_NAME" value="BTNodeInternalTests" />
+      <option name="MAIN_CLASS_NAME" value="BTNodeInternalTests$BPLusTreeConstruction" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BTNodeInternalTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCD427_Project2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BTNodeInternalTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCD427_Project2" />
+      <option name="PACKAGE_NAME" value="BTNodeLeafTests.SecondLeafNodeTests" />
+      <option name="MAIN_CLASS_NAME" value="BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BTNodeLeafTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSCD427_Project2" />
       <option name="PACKAGE_NAME" value="" />
@@ -50,6 +94,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.BTNodeLeafTests" />
+        <item itemvalue="JUnit.BTNodeInternalTests" />
+        <item itemvalue="Application.WordFrequency" />
+        <item itemvalue="JUnit.BTNodeLeafTests$SecondLeafNodeTests$FourthKeySplitsInitialNode" />
+        <item itemvalue="JUnit.BTNodeInternalTests$BPLusTreeConstruction" />
       </list>
     </recent_temporary>
   </component>
@@ -61,11 +109,49 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715039562478</updated>
-      <workItem from="1715039563531" duration="336000" />
+      <workItem from="1715039563531" duration="29815000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BTNodeLeafTests.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/WordFrequency.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BTNodeInternalTests.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/BTNodeLeaf.java</url>
+          <line>131</line>
+          <properties class="BTNodeLeaf" method="printLeavesInSequence">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this.children.get(1)" />
+        <watch expression="this.children.get(3)" />
+        <watch expression="this.parent.keys" />
+        <watch expression="this.parent.keys" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

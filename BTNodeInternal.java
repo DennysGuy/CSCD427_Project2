@@ -141,7 +141,6 @@ public class BTNodeInternal extends BTNode
          }
 
       }
-
       return -1;
    }
 
@@ -198,9 +197,7 @@ public class BTNodeInternal extends BTNode
    
    public void printStructureWKeys()
    {
-
          printNode(this, 0);
-
    }
 
    private BTNodeLeaf getLeaf (String word, BTNode root) {

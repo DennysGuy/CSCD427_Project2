@@ -63,12 +63,14 @@ public class BTNodeLeaf extends BTNode
        leftNode.nextLeaf = rightNode;
        rightNode.prevLeaf = leftNode;
 
-       if (this.prevLeaf != null) {
-           this.prevLeaf.nextLeaf = leftNode;
+      if (this.prevLeaf != null) {
+          this.prevLeaf.nextLeaf = leftNode;
+          leftNode.prevLeaf = this.prevLeaf;
        }
 
        if (this.nextLeaf != null) {
            rightNode.nextLeaf = this.nextLeaf;
+           this.nextLeaf.prevLeaf = rightNode;
        }
 
        newRoot.children.add(leftNode);
@@ -94,12 +96,14 @@ public class BTNodeLeaf extends BTNode
        newNode1.nextLeaf = newNode2;
        newNode2.prevLeaf = newNode1;
 
-       if (this.prevLeaf != null) {
+      if (this.prevLeaf != null) {
            this.prevLeaf.nextLeaf = newNode1;
+           newNode1.prevLeaf = this.prevLeaf;
        }
 
        if (this.nextLeaf != null) {
            newNode2.nextLeaf = this.nextLeaf;
+           this.nextLeaf.prevLeaf = newNode2;
        }
 
        int index = this.parent.keys.indexOf(this.keys.get(keyToMove));
@@ -144,9 +148,20 @@ public class BTNodeLeaf extends BTNode
 
    public void printStructureWKeys()
    {
-      
+/*       BTNodeLeaf leafNode = (BTNodeLeaf) node;
+       printSpaces(level);
+       System.out.println("Leaf Node: ");
+       for (int i = 0; i < leafNode.keys.size(); i++) {
+           printSpaces(level + 2);
+           System.out.println("Key: " + leafNode.keys.get(i) + ", Count: " + leafNode.keyCounts.get(i));
+       }*/
    }
 
+    private void printSpaces(int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print("  "); // Adjust spacing as needed
+        }
+    }
    public void sortKeys(ArrayList<String> keys) {
       Collections.sort(keys);
    }
