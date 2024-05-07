@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="CSCD427_Project2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/junit-platform-console-standalone-1.10.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/jsoup-1.14.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/CSCD427_Project2/jsoup-1.14.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/CSCD427_Project2/junit-platform-console-standalone-1.10.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

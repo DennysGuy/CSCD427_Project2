@@ -17,6 +17,8 @@ public class BTNodeInternal extends BTNode
       /*int index = this.findInsertIndex(key);
       BTNodeLeaf child = (BTNodeLeaf) this.children.get(index);
       child.insert(key, tree);*/
+
+
       this.insertLeaf(key, tree.root, tree);
 
       //next we have to fix the tree
@@ -68,6 +70,7 @@ public class BTNodeInternal extends BTNode
       BTNodeInternal newNode2 = new BTNodeInternal();
       this.addKeys(0, splitKey, newNode1);
       this.addKeys(splitKey+1, this.keys.size()-1, newNode2);
+
       //need to add root's leaf nodes
       this.addLeafs(newNode1);
       this.addLeafs(newNode2);
@@ -87,8 +90,7 @@ public class BTNodeInternal extends BTNode
       //find the key to split on
       int splitKey = this.keys.size()/2;
       //add split key to new root and remove it from the current root
-      newRoot.keys.add(this.keys.get(splitKey));
-      this.keys.remove(splitKey);
+      newRoot.keys.add(this.keys.remove(splitKey));
       splitKey = this.keys.size()/2; //get updated split key for leafs
       //create 2 new internal nodes and split the remaining keys into them
       BTNodeInternal leftNode = new BTNodeInternal();
@@ -108,17 +110,6 @@ public class BTNodeInternal extends BTNode
       this.parent = newRoot;
    }
 
-   public Boolean fixLeafNodePointers(BTNode root, BPlusTree tree) {
-
-      if (root instanceof BTNodeInternal) {
-         //traverse to the bottom of the BPlusTree
-         BTNodeInternal curRoot = (BTNodeInternal) root;
-         return fixLeafNodePointers(curRoot.children.get(0), tree);
-      } else {
-         BTNodeLeaf curLeaf = (BTNodeLeaf) tree.root;
-         return true;
-      }
-   }
    public int findInsertIndex(String word) {
       for (int i = 0; i <= this.keys.size(); i++) {
 
@@ -160,29 +151,82 @@ public class BTNodeInternal extends BTNode
             return i;
          }
       }
-
       return -1;
    }
 
+   private BTNode traverseToFirstLeaf(BTNode root) {
+      if (root instanceof BTNodeInternal) {
+         return this.traverseToFirstLeaf(((BTNodeInternal) root).children.get(0));
+      } else{
+         return root;
+      }
+
+   }
 
    public void printLeavesInSequence()
    {
-      
+      BTNodeLeaf firstLeaf = (BTNodeLeaf) this.traverseToFirstLeaf(this);
+      firstLeaf.printLeavesInSequence();
    }
    
    public void printStructureWKeys()
    {
-      
+
+         printNode(this, 0);
+
    }
 
 
    public Boolean rangeSearch(String startWord, String endWord)
    {
+      this.traverseToWord(this,startWord,endWord);
+
       return true;
    }
-   
+
+   private boolean traverseToWord(BTNode root, String startWord, String endWord) {
+      if (root instanceof  BTNodeInternal) {
+         int index = findInsertIndex(startWord, root);
+         return this.traverseToWord(((BTNodeInternal) root).children.get(index), startWord, endWord);
+      } else{
+         root.rangeSearch(startWord, endWord);
+         return true;
+      }
+   }
+
+
+   private void printNode(BTNode node, int level) {
+      if (node instanceof BTNodeInternal) {
+         BTNodeInternal internalNode = (BTNodeInternal) node;
+
+         for (int i = 0; i < internalNode.keys.size(); i++) {
+            printNode(internalNode.children.get(i), level + 2);
+            printSpaces(level);
+            System.out.println("Key: " + internalNode.keys.get(i));
+         }
+         printNode(internalNode.children.get(internalNode.children.size() - 1), level + 2);
+      } else if (node instanceof BTNodeLeaf) {
+         BTNodeLeaf leafNode = (BTNodeLeaf) node;
+         printSpaces(level);
+         System.out.println("Leaf Node: ");
+         for (int i = 0; i < leafNode.keys.size(); i++) {
+            printSpaces(level + 2);
+            System.out.println("Key: " + leafNode.keys.get(i) + ", Count: " + leafNode.keyCounts.get(i));
+         }
+      }
+   }
+
+
+   private void printSpaces(int count) {
+      for (int i = 0; i < count; i++) {
+         System.out.print("  "); // Adjust spacing as needed
+      }
+   }
+
    public Boolean searchWord(String word)
    {
+      BTNodeLeaf firstLeaf = (BTNodeLeaf) this.traverseToFirstLeaf(this);;
+      firstLeaf.searchWord(word);
       return true;
    }
 }

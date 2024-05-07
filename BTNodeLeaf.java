@@ -37,7 +37,6 @@ public class BTNodeLeaf extends BTNode
                if (this.parent == null) {
                     //create a new Root that is an internal node and add the split node to the root
                     this.newRootSetup(tree);
-
                 } else {
                    //if it's not a root node then we want to copy the split node up to the parent (if it's not full)
                    this.setupLeafsWithExistingParent(tree);
@@ -103,11 +102,12 @@ public class BTNodeLeaf extends BTNode
                BTNodeLeaf cur = (BTNodeLeaf) leafList.get(i);
                BTNodeLeaf next = (BTNodeLeaf) leafList.get(i+1);
                cur.nextLeaf = next;
+               next.prevLeaf = cur;
+
            }
 
        }
    }
-
 
    private void addKeys(int start, int end, BTNodeLeaf leaf) {
        for (int i = start; i < end ; i++) {
@@ -118,9 +118,17 @@ public class BTNodeLeaf extends BTNode
 
    public void printLeavesInSequence()
    {
-      
+      StringBuilder keys = new StringBuilder();
+      BTNodeLeaf cur = this;
+      while (cur != null) {
+          for (int i = 0; i < cur.keys.size(); i++) {
+              keys.append(cur.keys.get(i) + "\n");
+          }
+          cur = cur.nextLeaf;
+      }
+      System.out.println(keys);
    }
-   
+
    public void printStructureWKeys()
    {
       
@@ -135,11 +143,36 @@ public class BTNodeLeaf extends BTNode
 
    public Boolean rangeSearch(String startWord, String endWord)
    {
-      return true;
+      StringBuilder keys = new StringBuilder();
+      BTNodeLeaf cur = this;
+      while (cur != null) {
+          for (int i = 0; i < cur.keys.size(); i++) {
+              if (cur.keys.get(i).equals(endWord)) {
+                  keys.append(cur.keys.get(i) + "\n");
+                  System.out.println(keys );
+                  return true;
+              }
+              keys.append(cur.keys.get(i) + "\n");
+          }
+          cur = cur.nextLeaf;
+      }
+      return false;
    }
    
    public Boolean searchWord(String word){
-      return false;
+
+       BTNodeLeaf cur = this;
+       while (cur != null) {
+           for (int i = 0; i < cur.keys.size(); i++) {
+               if (cur.keys.get(i).equals(word)) {
+                   System.out.println(cur.keys.get(i)+ ", " + cur.keyCounts.get(i));
+                   return true;
+               }
+           }
+           cur = cur.nextLeaf;
+       }
+       System.out.println("Could not find the desired word!");
+       return false;
    }
 
 

@@ -19,13 +19,13 @@ class WordFrequency
       Scanner kb;
       
       //Check for valid arguments
-      if(args.length != 2)
+/*      if(args.length != 2)
       {
          System.out.println("ERROR: Incorrect format for command line arguments.");
          System.out.println("java WordFrequency <URL> <ignore_file_name.txt>");
          System.out.println("Exiting.");
          System.exit(-1);
-      }
+      }*/
       
       //Program will take time to set up tree; inform user
       System.out.println("WordFrequency is processing HTML. Please wait...");
@@ -33,7 +33,7 @@ class WordFrequency
       //Read stopwords ignoreSet
       try
       {
-         fin = new Scanner(new File(args[1]));
+         fin = new Scanner("stopwords.txt"/*new File(args[1]*/);
          while(fin.hasNextLine())
          {
             ignoreSet.add(fin.nextLine());
@@ -53,7 +53,7 @@ class WordFrequency
        * Tokenize string. */
       try
       {
-         document = Jsoup.connect(args[0]).get();
+         document = Jsoup.connect("https://canvas.ewu.edu/"/*args[0]*/).get();
          doc_text = document.text();
          tokenized_text = doc_text.split("(\\W+)?\\s(\\W+)?");
       }
